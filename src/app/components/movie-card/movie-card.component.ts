@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './movie-card.component.css',
 })
 export class MovieCardComponent {
-  @Input() movie = {};
+  @Input() movie: any = {};
 }
