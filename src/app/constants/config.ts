@@ -6,6 +6,7 @@ export const BG_IMG_URL =
 
 export const tmdbConfig = {
   imagePath: 'https://image.tmdb.org/t/p/w500/',
-  apiKey: 'youappkey',
-  accessToken: 'youraccesstoken',
+  apiKey: 'cf7e1f17e5f38807f5d5142c8c877a95',
+  accessToken:
+    'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZjdlMWYxN2U1ZjM4ODA3ZjVkNTE0MmM4Yzg3N2E5NSIsInN1YiI6IjY1OTUwNWY3YTY5OGNmNjRkYzQzOWZjNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.70Atmi9RZaInkjWQDi-pVbqXjWAC4BdaEZpAo-3QEsA',
 };
