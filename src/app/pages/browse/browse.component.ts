@@ -14,12 +14,27 @@ import { MovieService } from '../../services/movie.service';
 })
 export class BrowseComponent implements OnInit {
   movieService = inject(MovieService);
-  popularMovie: any[] = [];
+  popularMovies: any[] = [];
+  topRatedMovies: any[] = [];
+  nowPlayingMovies: any[] = [];
+  upcomingMovies: any[] = [];
 
   ngOnInit(): void {
     this.movieService.getPopularMovies().subscribe((result: any) => {
       console.log(result);
-      this.popularMovie = result.results;
+      this.popularMovies = result.results;
+    });
+    this.movieService.getTopRatedMovies().subscribe((result: any) => {
+      console.log(result);
+      this.topRatedMovies = result.results;
+    });
+    this.movieService.getNowPlayingMovies().subscribe((result: any) => {
+      console.log(result);
+      this.nowPlayingMovies = result.results;
+    });
+    this.movieService.getUpcomingMovies().subscribe((result: any) => {
+      console.log(result);
+      this.upcomingMovies = result.results;
     });
   }
 }

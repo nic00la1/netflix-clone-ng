@@ -19,11 +19,19 @@
   <div class="movie-categories">
     <app-movie-category
       [title]="'Popular'"
-      [movieList]="popularMovie"
+      [movieList]="popularMovies"
     ></app-movie-category>
     <app-movie-category
-      [title]="'New release'"
-      [movieList]="popularMovie"
+      [title]="'Top Rated'"
+      [movieList]="topRatedMovies"
+    ></app-movie-category>
+    <app-movie-category
+      [title]="'Upcoming'"
+      [movieList]="upcomingMovies"
+    ></app-movie-category>
+    <app-movie-category
+      [title]="'Now Playing'"
+      [movieList]="nowPlayingMovies"
     ></app-movie-category>
   </div>
 </div>
