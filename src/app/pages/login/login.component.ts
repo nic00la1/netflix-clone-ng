@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BG_IMG_URL, LOGO_URL } from '../../constants/config';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   logoUrl = LOGO_URL;
   bgUrl = BG_IMG_URL;
 
@@ -23,6 +23,13 @@ export class LoginComponent {
   router = inject(Router);
 
   toasterService = inject(ToastrService); // inject the toaster service
+
+  ngOnInit(): void {
+    // if user is already logged in then redirect to browse page
+    if (this.loginService.isLoggedIn) {
+      this.router.navigateByUrl('/browse');
+    }
+  }
 
   onSubmit() {
     // validate email and password

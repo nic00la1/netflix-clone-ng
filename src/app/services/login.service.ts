@@ -13,6 +13,12 @@ export class LoginService {
 
     // Here, you would handle the response from the backend, including token storage.
     // For simplicity, we'll just store a dummy token in local storage.
-    localStorage.setItem('token', Math.random().toString());
+    localStorage.setItem('token', Math.random() + '');
+  }
+  get isLoggedIn() {
+    if (localStorage.getItem('token')) {
+      return true;
+    }
+    return false;
   }
 }
