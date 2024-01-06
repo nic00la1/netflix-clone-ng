@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'browse',
     component: BrowseComponent,
   },
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
 ];
