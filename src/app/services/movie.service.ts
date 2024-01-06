@@ -11,14 +11,17 @@ export class MovieService {
   getPopularMovies() {
     const headers = this.getHeaders();
     return this.httpService.get('https://api.themoviedb.org/3/movie/popular', {
-      headers,
+      headers: headers,
     });
   }
 
   getHeaders() {
-    const headers = new HttpHeaders();
-    headers.append('accept', 'application/json');
-    headers.append('Authorization', 'Bearer' + tmdbConfig.accessToken);
+    let headers = new HttpHeaders();
+    headers = headers.append('accept', 'application/json');
+    headers = headers.append(
+      'Authorization',
+      'Bearer ' + tmdbConfig.accessToken
+    );
     return headers;
   }
 }
