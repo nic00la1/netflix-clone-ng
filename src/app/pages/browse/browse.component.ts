@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { MovieCategoryComponent } from '../../components/movie-category/movie-category.component';
 import { MovieService } from '../../services/movie.service';
+import { Movie } from '../../types/movies';
 
 @Component({
   selector: 'app-browse',
@@ -14,10 +15,10 @@ import { MovieService } from '../../services/movie.service';
 })
 export class BrowseComponent implements OnInit {
   movieService = inject(MovieService);
-  popularMovies: any[] = [];
-  topRatedMovies: any[] = [];
-  nowPlayingMovies: any[] = [];
-  upcomingMovies: any[] = [];
+  popularMovies: Movie[] = [];
+  topRatedMovies: Movie[] = [];
+  nowPlayingMovies: Movie[] = [];
+  upcomingMovies: Movie[] = [];
 
   ngOnInit(): void {
     this.movieService.getPopularMovies().subscribe((result: any) => {

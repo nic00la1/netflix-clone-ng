@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
+import { Movie } from '../../types/movies';
 
 @Component({
   selector: 'app-movie-category',
@@ -10,5 +11,5 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 })
 export class MovieCategoryComponent {
   @Input() title = '';
-  @Input() movieList: any[] = [];
+  @Input() movieList: Movie[] = [];
 }
