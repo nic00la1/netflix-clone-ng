@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -21,15 +22,18 @@ export class LoginComponent {
   loginService = inject(LoginService);
   router = inject(Router);
 
+  toasterService = inject(ToastrService); // inject the toaster service
+
   onSubmit() {
     // validate email and password
     if (!this.email || !this.password) {
-      alert('Provide email or password');
+      this.toasterService.error('Provide email or password');
       return;
     }
     // if email and password is correct lets login the user
     this.loginService.login(this.email, this.password);
     // now we are logged in so we will redirect to our browse page
+    this.toasterService.success('Logged in successfully');
     this.router.navigateByUrl('/browse');
   }
 }
