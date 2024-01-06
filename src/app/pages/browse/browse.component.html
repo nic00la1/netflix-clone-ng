@@ -3,12 +3,12 @@
   <div class="banner">
     <img
       class="banner-img"
-      src="https://image.tmdb.org/t/p/w500/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg"
-      alt=""
+      [src]="tmdbConfig.imagePath + bannerMovie.poster_path"
+      alt="banner image"
     />
     <div class="banner-movie-info">
-      <h4>Movie title</h4>
-      <p>description</p>
+      <h4>{{ bannerMovie.original_title }}</h4>
+      <p>{{ bannerMovie.overview }}</p>
       <div>
         <button>Play</button>
         <button>More info</button>

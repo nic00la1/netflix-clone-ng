@@ -5,6 +5,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { MovieCategoryComponent } from '../../components/movie-category/movie-category.component';
 import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../types/movies';
+import { tmdbConfig } from '../../constants/config';
 
 @Component({
   selector: 'app-browse',
@@ -19,11 +20,13 @@ export class BrowseComponent implements OnInit {
   topRatedMovies: Movie[] = [];
   nowPlayingMovies: Movie[] = [];
   upcomingMovies: Movie[] = [];
-
+  bannerMovie!: Movie;
+  tmdbConfig = tmdbConfig;
   ngOnInit(): void {
     this.movieService.getPopularMovies().subscribe((result: any) => {
       console.log(result);
       this.popularMovies = result.results;
+      this.bannerMovie = this.popularMovies[0];
     });
     this.movieService.getTopRatedMovies().subscribe((result: any) => {
       console.log(result);
