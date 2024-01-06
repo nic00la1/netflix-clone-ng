@@ -14,10 +14,12 @@ import { MovieService } from '../../services/movie.service';
 })
 export class BrowseComponent implements OnInit {
   movieService = inject(MovieService);
+  popularMovie: any[] = [];
 
   ngOnInit(): void {
-    this.movieService.getPopularMovies().subscribe((result) => {
+    this.movieService.getPopularMovies().subscribe((result: any) => {
       console.log(result);
+      this.popularMovie = result.results;
     });
   }
 }

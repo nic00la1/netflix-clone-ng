@@ -1,9 +1,9 @@
 <div>
   <h4 class="text-white font-bold mb-2 text-xl">{{ title }}</h4>
   <div class="flex gap-3">
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
+    @for(movie of movieList; track movie) {
+    <app-movie-card [movie]="movieList"></app-movie-card>
+
+    }
   </div>
 </div>

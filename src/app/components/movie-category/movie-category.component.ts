@@ -10,4 +10,5 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 })
 export class MovieCategoryComponent {
   @Input() title = '';
+  @Input() movieList: any[] = [];
 }
