@@ -8,8 +8,8 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   // if user is already logged in then redirect to browse page
   if (!loginService.isLoggedIn) {
-    return router.createUrlTree(['/login']);
+    return router.createUrlTree(['/login']); // redirect to login page
   } else {
-    return true;
+    return true; // allow access to browse page
   }
 };
