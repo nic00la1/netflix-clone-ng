@@ -1,8 +1,6 @@
+@if (movie) {
 <div class="movie-card">
-  <img
-    src="https://image.tmdb.org/t/p/w500/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg"
-    alt="movie image"
-  />
-  <h4>title</h4>
-  <p>description</p>
+  <img [src]="tmdbConfig.imagePath + movie.poster_path" alt="banner image" />
+  <h4 class="title">{{ movie.original_title }}</h4>
 </div>
+}
